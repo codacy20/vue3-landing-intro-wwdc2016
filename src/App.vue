@@ -12,7 +12,7 @@ export default {
   },
   setup() {
     const hell0 = "Hello";
-    const colors = ["97C774"];
+    const colors = ["97C774", "B63E98", "D18E62", "DB3E41", "1BABA5"];
     return {
       hell0,
       colors,
@@ -28,6 +28,5 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 100vw; */
 }
 </style>
