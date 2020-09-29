@@ -1,25 +1,33 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 in CodeSandbox!" />
+  <Title msg="Hello Vue 3 in CodeSandbox!" :hell0="hell0" :colors="colors" />
 </template>
 
 <script>
-import HelloWorldVue from "./components/HelloWorld.vue";
+import Title from "./components/Title.vue";
+
 export default {
   name: "App",
   components: {
-    HelloWorld: HelloWorldVue,
+    Title,
+  },
+  setup() {
+    const hell0 = "Hello";
+    const colors = ["97C774"];
+    return {
+      hell0,
+      colors,
+    };
   },
 };
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background: #292B36;
+  height: 99vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100vw; */
 }
 </style>
