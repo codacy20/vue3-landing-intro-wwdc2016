@@ -33,22 +33,24 @@ export default {
     const newColors = props.colors.map((item) => {
       return `#` + item;
     });
-    let counter = 0;
-    let tempTitle = "1";
-    setInterval(() => {
-      tempTitle = "1";
-      if (counter < props.titles.length - 1) {
-        counter++;
-      } else {
-        counter = 0;
-      }
-      tempTitle = props.titles[counter];
-      console.log(counter < props.titles.length, tempTitle);
-    }, 1000);
+    let tempTitle = this.$props.titles[0];
     return {
       newColors,
       tempTitle,
     };
+  },
+  created: function (props) {
+    let counter = 1;
+    var self = this;
+    setInterval(() => {
+      if (counter < this.$props.titles.length - 1) {
+        counter = counter + 1;
+      } else {
+        counter = 0;
+      }
+      self.tempTitle = this.$props.titles[counter];
+      console.log(counter, self.tempTitle);
+    }, 2000);
   },
 };
 </script>
