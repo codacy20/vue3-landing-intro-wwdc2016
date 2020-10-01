@@ -19,9 +19,11 @@ export default {
     const hell0 = "Hello,";
     const colors = ["97C774", "B63E98", "D18E62", "DB3E41", "1BABA5", "97C774"];
     const titles = [
+      "human",
       "web developer",
       "devops engnieer",
-      "freelancer",
+      "brother",
+      "contractor",
       "citizen",
     ];
     return {

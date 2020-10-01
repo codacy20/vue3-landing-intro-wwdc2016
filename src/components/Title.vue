@@ -1,22 +1,21 @@
 <template>
-  <div>
-    <span
-      v-for="(val, key) in hell0"
-      v-bind:key="key"
-      :style="[colors ? { color: newColors[key] } : '']"
-      class="text"
-    >
-      {{ val }}
+  <div class="title-container">
+    <div>
+      <span
+        v-for="(val, key) in hell0"
+        v-bind:key="key"
+        :style="[colors ? { color: newColors[key] } : '']"
+        class="text"
+      >
+        {{ val }}
+      </span>
+      <span class="text blinker" id="two">I'm Amir!</span>
+    </div>
+    <span class="green">
+      /*
+      <span class="green">{{ tempTitle }}</span>
+      */
     </span>
-    <span class="text" id="two">I'm Amir!</span>
-  </div>
-  <div>
-    /*
-    <!-- <span v-for="(val2, key2) in tempTitle" v-bind:key="key2">
-      {{ val2 }}
-    </span> -->
-    <span>{{ tempTitle }}</span>
-    */
   </div>
 </template>
 
@@ -49,7 +48,6 @@ export default {
         counter = 0;
       }
       self.tempTitle = this.$props.titles[counter];
-      console.log(counter, self.tempTitle);
     }, 2000);
   },
 };
@@ -63,5 +61,36 @@ export default {
 }
 #two {
   color: white;
+}
+.title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title-container .green {
+  color: #59B75C;
+  margin-top: 10%;
+  font-size: 2vw;
+  font-family: "Droid Sans Mono", monospace;
+}
+.blinker:after {
+  content: "";
+  height: 3vw;
+  width: 1px;
+  background: transparent;
+  position: absolute;
+  animation: blink 1.2s linear infinite;
+}
+@keyframes blink {
+  49% {
+    background: transparent;
+  }
+  50% {
+    background: white;
+  }
+  100% {
+    background: white;
+  }
 }
 </style>
